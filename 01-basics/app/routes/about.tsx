@@ -15,49 +15,76 @@ const About: React.FC = () => {
     const birthDate = new Date('2000-07-24');
     const daysSinceBirth = calculateDaysSince(birthDate);
     const [gotoUserManual, setGotoUserManual] = useState(false);
+    const [isHoveredEmail, setIsHoveredEmail] = useState(false);
+    const [isHoveredInstagram, setIsHoveredInstagram] = useState(false);
+
 
     return (
-        <div className="mt-20 font-light text-gray-200 tracking-tight leading-relaxed text-lg mb-28">
+        <div className="mt-20 font-light text-gray-200 tracking-tight leading-relaxed text-lg mb-28 p-4 lg:p-0">
             <Title first="About" second="Me" />
             <SmallerTitle heading="Hey, I'm Sumit 👋🏼" />
             <p>
-                Born {daysSinceBirth} days ago, I’ve had the privilege of exploring a diverse range of tech stacks and cultivating a variety of interests. Currently, my focus is on attracting demand for my services and making meaningful connections in the tech world.
+                Hi, I am Sumit, a passionate <span className='lightbold'>full-stack developer</span> based in <span className='lightbold'>India</span>. I started my journey in 2024 and have been dedicated to creating functional and visually appealing websites. Born {daysSinceBirth} days ago, I’ve have had the privilege of exploring a diverse range of tech stacks and cultivating a variety of interests. Currently, my focus is on attracting demand for my services and making meaningful connections in the tech world.
             </p>
             <p>
-                I operate at the intersection of Front-End Development, Data Science, and Back-End Development. This unique blend allows me to tackle complex problems, create impactful products, and experiment with innovative ideas. When I’m not immersed in a project, you can often find me diving into new codebases or learning about emerging technologies.
+                I operate at the intersection of <span className='lightbold'>Frontend</span> Development,  <span className='lightbold'>datascience</span>, and  <span className='lightbold'>backend</span>  Development. When I’m not immersed in a project, you can often find me diving into new codebases or learning about emerging technologies.
             </p>
 
             <p>
-                If you’d like to reach out, I’m most responsive via email, and I enjoy sharing insights and updates on Instagram.
+                If you want to get in touch, I'm most responsive over <a
+                    href="mailto:sumitjha2057@gmail.com"
+                    target="_blank"
+                    className="underline decoration-[#c58af9] hover:decoration-4 underline-offset-4 lightbold"
+                    onMouseEnter={() => setIsHoveredEmail(true)}
+                    onMouseLeave={() => setIsHoveredEmail(false)}
+                >
+                    email
+                    <span
+                        className={`inline-block transition-transform duration-200 ${isHoveredEmail ? 'transform -translate-y-1 translate-x-1 font-bold' : 'text-[0px]'
+                            }`}
+                    >
+                        ↗
+                    </span>
+                </a> and I tend to be pretty active on <a
+                    href="https://www.instagram.com/sumitk.jha/"
+                    target="_blank"
+                    className="underline decoration-[#c58af9] hover:decoration-4 underline-offset-4 lightbold"
+                    onMouseEnter={() => setIsHoveredInstagram(true)}
+                    onMouseLeave={() => setIsHoveredInstagram(false)}
+                >
+                    instagram
+                    <span
+                        className={`inline-block transition-transform duration-200 ${isHoveredInstagram ? 'transform -translate-y-1 translate-x-1 font-bold' : 'text-[0px]'
+                            }`}
+                    >
+                        ↗
+                    </span>
+                </a> as well.
             </p>
 
             <SmallerTitle heading="PREVIOUSLY" />
             <p>
-                Most recently, I completed my <strong>B.Tech degree in Computer Science and Engineering</strong> from <strong>MNNIT-Allahabad</strong>, where I gained hands-on experience with tens of thousands of lines of code across various tech stacks and programming languages.
+                I am a <span className='lightbold'>CS undergrad 24'</span> from <span className='lightbold'>MNNIT-Allahabad</span>. Before that, I completed my secondary and senior secondary education at <span className='lightbold'>DAV Biratnagar</span>. I was raised in Ghato city, Hazaribagh, and finished my schooling at <span className='lightbold'>Holy Cross School</span>.
             </p>
-            <p>
-                Before that, I completed my secondary and senior secondary education at <strong>DAV Biratnagar</strong>. I was raised in <strong>Ghato, Hazaribagh</strong>, and finished my schooling at <strong>Holy Cross School</strong>.
-            </p>
-            <p>
-                I have worked extensively with machine learning frameworks and libraries such as <strong>React</strong>, <strong>EJS</strong>, <strong>Redux</strong>, <strong>Node.js</strong>, <strong>Express</strong>, and <strong>MongoDB</strong>. My preferred coding languages are <strong>JavaScript</strong> and <strong>TypeScript</strong>, and I often collaborate with startups on diverse projects.
-            </p>
+
+
 
             <SmallerTitle heading="USER MANUAL" />
             <p>
                 I’ve put together a <Link
                     to={"/user-manual"}
-                    className="underline decoration-[#c58af9] hover:decoration-4 underline-offset-4"
+                    className="underline decoration-[#c58af9] hover:decoration-4 underline-offset-4 lightbold"
                     onMouseEnter={() => setGotoUserManual(true)}
                     onMouseLeave={() => setGotoUserManual(false)}
                 >
                     playbook
-                </Link>
-                <span
-                    className={`inline-block transition-transform duration-200 ${gotoUserManual ? 'transform -translate-y-1 translate-x-1 font-bold' : 'text-[0px]'
-                        }`}
-                >
-                    ↗
-                </span> that outlines how to work with me. It includes insights into my strengths, weaknesses, and the principles I strive to uphold in my professional journey.
+                    <span
+                        className={`inline-block transition-transform duration-200 ${gotoUserManual ? 'transform -translate-y-1 translate-x-1 font-bold' : 'text-[0px]'
+                            }`}
+                    >
+                        ↗
+                    </span>
+                </Link> that outlines how to work with me. It includes insights into my strengths, weaknesses, and the principles I strive to uphold in my professional journey.
             </p>
 
         </div>

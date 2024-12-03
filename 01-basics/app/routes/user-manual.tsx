@@ -1,3 +1,4 @@
+import { Link } from '@remix-run/react';
 import React, { useState } from 'react';
 import SmallerTitle from '~/components/smalltitle';
 import Title from '~/components/title';
@@ -16,75 +17,96 @@ import thumbsdowngif from "~/../public/gificons/down.gif"
 import bookmarkgif from "~/../public/gificons/bookmark.gif"
 import quotesgif from "~/../public/gificons/quotes.gif"
 import sendMessagegif from "~/../public/gificons/send-message.gif"
+import Point from '~/components/point';
 
-// Main User Manual component
-const UserManual: React.FC = () => {
+// Function to calculate the number of days since a given date
+const calculateDaysSince = (date: Date): number => {
+    const today = new Date();
+    const timeDifference = today.getTime() - date.getTime();
+    const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
+    return daysDifference;
+};
+
+const About: React.FC = () => {
+    const birthDate = new Date('2000-07-24');
+    const daysSinceBirth = calculateDaysSince(birthDate);
+    const [gotoUserManual, setGotoUserManual] = useState(false);
     const [isHoveredEmail, setIsHoveredEmail] = useState(false);
     const [isHoveredInstagram, setIsHoveredInstagram] = useState(false);
 
+
     return (
-        <div className="user-manual-container mt-20 mb-28 font-light text-gray-200 tracking-tight leading-relaxed text-lg">
-            <Title first='User' second='Manual' />
+        <div className="mt-20 font-light text-gray-200 tracking-tight leading-relaxed text-lg mb-28 p-4 lg:p-0">
+            <Title first="User" second="Manual" />
 
             <div className='flex items-center gap-2'>
-                <img src={overviewgif} className='h-12 -mb-3' />
+                <img src={overviewgif} className='h-12 -mb-3 sm:h-10' />
                 <SmallerTitle heading='OVERVIEW' />
             </div>
-            <p><span className='highlight'>5-3-1 Enneagram:</span> Investigator, Achiever, and Perfectionist. Remarkably efficient, hard-working and competent. While sometimes self-righteous, pragmatic and tactful enough not to compromise goals by being too inflexible. Can be clever, self-confident, perfectionist. Introverted, Intuitive, Thinking, Judging, and Assertive.</p>
-
+            <p className='text-neutral-400'>
+                <Point topic="5-3-1 Enneagram" desc="Investigator, Achiever, and Perfectionist. Remarkably efficient, hard-working and competent. While sometimes self-righteous, pragmatic and tactful enough not to compromise goals by being too inflexible. Can be clever, self-confident, perfectionist. Introverted, Intuitive, Thinking, Judging, and Assertive." />
+            </p>
+            <br />
+            <br />
             <div className='flex items-center gap-2'>
-                <img src={thumbsup} className='h-12 -mb-3' />
+                <img src={thumbsup} className='h-12 -mb-3 sm:h-10' />
                 <SmallerTitle heading='STRENGTHS' />
             </div>
             <ul>
                 {strengthsData.map((strength, index) => (
-                    <li key={index}>
-                        <span className='highlight'>{strength.title}:</span> {strength.description}
-                    </li>
+                    <Point topic={strength.title} desc={strength.description} />
                 ))}
             </ul>
 
+            <br />
+            <br />
+
             <div className='flex items-center gap-2'>
-                <img src={thumbsdowngif} className='h-12 -mb-3' />
+                <img src={thumbsdowngif} className='h-12 -mb-3 sm:h-10' />
                 <SmallerTitle heading='WEAKNESSES' />
             </div>
             <ul>
                 {weaknessesData.map((weakness, index) => (
-                    <li key={index}>
-                        <span className='highlight'>{weakness.title}:</span> {weakness.description}
-                    </li>
+                    <Point topic={weakness.title} desc={weakness.description} />
                 ))}
             </ul>
 
+            <br />
+            <br />
+
             <div className='flex items-center gap-2'>
-                <img src={bookmarkgif} className='h-12 -mb-3' />
+                <img src={bookmarkgif} className='h-12 -mb-3 sm:h-10' />
                 <SmallerTitle heading='PRINCIPLES' />
             </div>
             <ul>
                 {principlesData.map((principle, index) => (
-                    <li key={index}>
-                        <span className='highlight'>{principle.title}:</span> {principle.description}
-                    </li>
+                    <Point topic={principle.title} desc={principle.description} />
                 ))}
             </ul>
 
+            <br />
+            <br />
+
             <div className='flex items-center gap-2'>
-                <img src={quotesgif} className='h-12 -mb-3' />
+                <img src={quotesgif} className='h-12 -mb-3 sm:h-10' />
                 <SmallerTitle heading='FAVORITE QUOTES' />
             </div>
             {quotesData.map((quoteObj, index) => (
                 <Quote key={index} quote={quoteObj.quote} author={quoteObj.author} />
             ))}
 
+
+            <br />
+
             <div className='flex items-center gap-2'>
-                <img src={sendMessagegif} className='h-12 -mb-3 rounded-full' />
+                <img src={sendMessagegif} className='h-12 -mb-3 rounded-full sm:h-10' />
                 <SmallerTitle heading='GET IN TOUCH' />
             </div>
             <p>
                 If you want to get in touch, I'm most responsive over <a
                     href="mailto:sumitjha2057@gmail.com"
                     target="_blank"
-                    className="underline decoration-[#c58af9] hover:decoration-4 underline-offset-4"
+                    className="underline decoration-[#c58af9] hover:decoration-4 underline-offset-4 lightbold"
                     onMouseEnter={() => setIsHoveredEmail(true)}
                     onMouseLeave={() => setIsHoveredEmail(false)}
                 >
@@ -95,24 +117,25 @@ const UserManual: React.FC = () => {
                     >
                         ↗
                     </span>
-                </a> and I tend to be pretty active on <a
+                </a> and I tend to be pretty active on  <a
                     href="https://www.instagram.com/sumitk.jha/"
                     target="_blank"
-                    className="underline decoration-[#c58af9] hover:decoration-4 underline-offset-4"
+                    className="underline decoration-[#c58af9] hover:decoration-4 underline-offset-4 lightbold"
                     onMouseEnter={() => setIsHoveredInstagram(true)}
                     onMouseLeave={() => setIsHoveredInstagram(false)}
                 >
                     instagram
-                </a>
-                <span
-                    className={`inline-block transition-transform duration-200 ${isHoveredInstagram ? 'transform -translate-y-1 translate-x-1 font-bold' : 'text-[0px]'
-                        }`}
-                >
-                    ↗
-                </span> as well.
+                    <span
+                        className={`inline-block transition-transform duration-200 ${isHoveredInstagram ? 'transform -translate-y-1 translate-x-1 font-bold' : 'text-[0px]'
+                            }`}
+                    >
+                        ↗
+                    </span>
+                </a> as well.
             </p>
-        </div>
+
+        </div >
     );
 };
 
-export default UserManual;
+export default About;

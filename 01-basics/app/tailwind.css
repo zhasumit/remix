@@ -4,41 +4,40 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html,
 body {
-  @apply bg-[#121215]; 
+  @apply bg-[#121215];
   @apply tracking-tight;
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
 }
 
-.poppinsfont, .lighterpoppins{
-  font-family:"Poppins", sans-serif;
-  font-weight:700;
+.poppinsfont,
+.lighterpoppins {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
 }
 
-.lighterpoppins{
+.lighterpoppins {
   color: #353334;
 }
 
-p{
+p {
   @apply mb-3;
+  @apply text-neutral-400;
 }
-li{
-  @apply mb-2;
+
+.lightbold {
+  @apply text-gray-300 font-medium;
 }
 
 .highlight {
+  
   font-weight: 500;
-  font-size: 1.23em;
+  font-size: 1.2em;
   margin-right: 0.2em;
-  margin-bottom: .2em;
-  padding: 0px 3px;
-  background: linear-gradient(
-      to bottom,
-      #ffffff00 65%,   /* dark background color */
-      #8aa7f94f 0%   /* light transparent color */
-  );
+  margin-bottom: 0.2em;
+  padding: 0px 3px 0 0px;
+  background: linear-gradient(to bottom, #ffffff00 65%, #182940 0%);
 }

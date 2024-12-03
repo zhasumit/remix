@@ -34,39 +34,39 @@ const Projects: React.FC = () => {
     ];
 
     return (
-        <div className="mt-20 mb-10">
+        <div className="mt-20 mb-28 px-4 lg:px-0">
             {combinedProjects.map((section, sectionIndex) => (
                 <div key={sectionIndex}>
                     <Title first={section.category.split(' ')[0]} second={section.category.split(' ')[1]} />
                     <br />
                     {section.projects.map((project, index) => (
-                        <div className="flex gap-5 mb-14" key={index}>
+                        <div className="flex flex-col md:flex-row gap-5 mb-16" key={index}>
                             {/* Project Image */}
-                            <div className="projectImage w-[300px] h-[170px] flex-shrink-0">
+                            <div className="projectImage w-full md:w-[300px] h-[170px] flex-shrink-0">
                                 <img
                                     src={project.image}
                                     alt={project.name}
-                                    className="rounded-lg w-full h-full object-cover"
+                                    className="rounded-lg h-full object-cover w-[300px] md:h-[170px]"
                                 />
                             </div>
 
                             {/* Project Details */}
-                            <div className="projectDetails flex flex-col justify-between">
+                            <div className="projectDetails flex flex-col justify-between w-full">
                                 <div className="projectHeading flex items-center justify-between">
-                                    <h3 className="font-semibold text-3xl">{project.name}</h3>
+                                    <h3 className="font-semibold text-2xl md:text-3xl">{project.name}</h3>
                                     <div className="flex gap-6">
                                         {project.github && (
                                             <a
                                                 href={project.github}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-blue-500 flex items-center"
+                                                className="flex items-center hover:text-[#f46c38]"
                                                 onMouseEnter={() => handleGithubMouseEnter(index)}
                                                 onMouseLeave={handleGithubMouseLeave}
                                             >
                                                 github
                                                 <span
-                                                    className={`inline-block transition-transform duration-300 ${hoveredGithubIndex === index
+                                                    className={`inline-block transition-transform duration-200 p-1 ${hoveredGithubIndex === index
                                                         ? 'transform -translate-y-1 translate-x-1 font-extrabold'
                                                         : 'font-medium'
                                                         }`}
@@ -80,13 +80,13 @@ const Projects: React.FC = () => {
                                                 href={project.live}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-blue-500 flex items-center"
+                                                className="flex items-center hover:text-[#f46c38]"
                                                 onMouseEnter={() => handleLiveMouseEnter(index)}
                                                 onMouseLeave={handleLiveMouseLeave}
                                             >
                                                 live
                                                 <span
-                                                    className={`inline-block transition-transform duration-300 ${hoveredLiveIndex === index
+                                                    className={`inline-block transition-transform duration-200 p-1 ${hoveredLiveIndex === index
                                                         ? 'transform -translate-y-1 translate-x-1 font-extrabold'
                                                         : 'font-medium'
                                                         }`}
@@ -97,17 +97,17 @@ const Projects: React.FC = () => {
                                         )}
                                     </div>
                                 </div>
-                                <p className="text-gray-400 leading-snug font-light">{project.description}</p>
-                                <div className="flex gap-2 ">
+                                <p className="text-neutral-400 leading-tight tracking-tighter font-light">{project.description}</p>
+                                <div className="flex flex-wrap gap-2 mt-4">
                                     {project.techstack.map((tech, techIndex) => (
                                         <div
                                             key={techIndex}
-                                            className="flex items-center text-gray-600 text-sm font-medium gap-1"
+                                            className="flex items-center text-neutral-400 text-xs font-medium gap-1 p-1 rounded-md bg-zinc-800/50"
                                         >
                                             <img
                                                 src={tech.icon}
                                                 alt={tech.name}
-                                                className="w-4 h-4"
+                                                className="w-4"
                                             />
                                             {tech.name}
                                         </div>
@@ -116,8 +116,6 @@ const Projects: React.FC = () => {
                             </div>
                         </div>
                     ))}
-                    <br />
-                    <br />
                 </div>
             ))}
         </div>

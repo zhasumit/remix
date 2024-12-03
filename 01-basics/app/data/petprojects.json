@@ -6,9 +6,18 @@
         "github": "https://github.com/zhasumit/FrontEnd-projects/tree/main/DragDocs",
         "live": "https://dragnote.vercel.app/",
         "techstack": [
-            { "name": "React", "icon": "/techicons/React-Dark.svg" },
-            { "name": "Tailwind", "icon": "/techicons/TailwindCSS-Dark.svg" },
-            { "name": "NodeJS", "icon": "/techicons/NodeJS-Dark.svg" }
+            {
+                "name": "React",
+                "icon": "/techicons/React-Dark.svg"
+            },
+            {
+                "name": "Tailwind",
+                "icon": "/techicons/TailwindCSS-Dark.svg"
+            },
+            {
+                "name": "NodeJS",
+                "icon": "/techicons/NodeJS-Dark.svg"
+            }
         ]
     },
     {
@@ -18,9 +27,18 @@
         "github": "https://github.com/zhasumit/js-rookies/tree/main/21-otakudoro",
         "live": "https://otakudoro.vercel.app/",
         "techstack": [
-            { "name": "HTML", "icon": "/techicons/HTML.svg" },
-            { "name": "CSS", "icon": "/techicons/CSS.svg" },
-            { "name": "Vanilla JS", "icon": "/techicons/JavaScript.svg" }
+            {
+                "name": "HTML",
+                "icon": "/techicons/HTML.svg"
+            },
+            {
+                "name": "CSS",
+                "icon": "/techicons/CSS.svg"
+            },
+            {
+                "name": "Vanilla JS",
+                "icon": "/techicons/JavaScript.svg"
+            }
         ]
     },
     {
@@ -30,9 +48,18 @@
         "github": "https://github.com/zhasumit/React-rookies/tree/main/21-todoContextAPI",
         "live": "https://sudo-do.vercel.app/",
         "techstack": [
-            { "name": "React", "icon": "/techicons/React-Dark.svg" },
-            { "name": "Tailwind", "icon": "/techicons/TailwindCSS-Dark.svg" },
-            { "name": "NodeJS", "icon": "/techicons/NodeJS-Dark.svg" }
+            {
+                "name": "React",
+                "icon": "/techicons/React-Dark.svg"
+            },
+            {
+                "name": "Tailwind",
+                "icon": "/techicons/TailwindCSS-Dark.svg"
+            },
+            {
+                "name": "NodeJS",
+                "icon": "/techicons/NodeJS-Dark.svg"
+            }
         ]
     },
     {
@@ -42,9 +69,18 @@
         "github": "https://github.com/zhasumit/js-rookies/tree/main/18-TugNotes/v2",
         "live": "https://tugnote.vercel.app/",
         "techstack": [
-            { "name": "HTML", "icon": "/techicons/HTML.svg" },
-            { "name": "CSS", "icon": "/techicons/CSS.svg" },
-            { "name": "Vanilla JS", "icon": "/techicons/JavaScript.svg" }
+            {
+                "name": "HTML",
+                "icon": "/techicons/HTML.svg"
+            },
+            {
+                "name": "CSS",
+                "icon": "/techicons/CSS.svg"
+            },
+            {
+                "name": "Vanilla JS",
+                "icon": "/techicons/JavaScript.svg"
+            }
         ]
     },
     {
@@ -54,9 +90,18 @@
         "github": "https://github.com/zhasumit/js-rookies/tree/main/19-Tempdump",
         "live": "https://tempdump.vercel.app/",
         "techstack": [
-            { "name": "HTML", "icon": "/techicons/HTML.svg" },
-            { "name": "CSS", "icon": "/techicons/CSS.svg" },
-            { "name": "Vanilla JS", "icon": "/techicons/JavaScript.svg" }
+            {
+                "name": "HTML",
+                "icon": "/techicons/HTML.svg"
+            },
+            {
+                "name": "CSS",
+                "icon": "/techicons/CSS.svg"
+            },
+            {
+                "name": "Vanilla JS",
+                "icon": "/techicons/JavaScript.svg"
+            }
         ]
     }
 ]
