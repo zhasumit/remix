@@ -1,7 +1,14 @@
+import Title from '~/components/title';
 import { Link } from '@remix-run/react';
 import React, { useState } from 'react';
 import SmallerTitle from '~/components/smalltitle';
-import Title from '~/components/title';
+import type { MetaFunction } from "@remix-run/node";
+
+export const meta: MetaFunction = () => {
+    return [
+        { title: "Sumit Jha - about" },
+    ];
+};
 
 // Function to calculate the number of days since a given date
 const calculateDaysSince = (date: Date): number => {
@@ -20,7 +27,7 @@ const About: React.FC = () => {
 
 
     return (
-        <div className="mt-20 font-light text-gray-200 tracking-tight leading-relaxed text-lg mb-28 p-4 lg:p-0">
+        <div className="mt-10 mb-20 md:mb-24 font-light text-gray-200 tracking-tight leading-relaxed text-lg p-4 lg:p-0">
             <Title first="About" second="Me" />
             <SmallerTitle heading="Hey, I'm Sumit 👋🏼" />
             <p>

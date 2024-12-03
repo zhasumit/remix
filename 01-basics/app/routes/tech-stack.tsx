@@ -1,9 +1,16 @@
 import Title from '~/components/title'
 import skills from "~/data/skills.json";
+import type { MetaFunction } from "@remix-run/node";
+
+export const meta: MetaFunction = () => {
+    return [
+        { title: "Sumit Jha - tech arsenal" },
+    ];
+};
 
 const TechStack = () => {
     return (
-        <div className="mb-20 mt-20 p-4 lg:p-0">
+        <div className="mt-8 mb-20 p-4 lg:p-0">
             <Title first="Tech" second="Arsenal" />
             <br />
             <div className="grid grid-cols-2 sm:grid-cols-3">

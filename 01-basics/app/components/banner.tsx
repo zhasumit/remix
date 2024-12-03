@@ -35,7 +35,7 @@ const Banner: React.FC = () => {
 
     return (
         <>
-            <div className="flex flex-col md:flex-row gap-10 mt-20 items-center px-4 lg:px-0 mb-24 md:mb-6">
+            <div className="flex flex-col md:flex-row gap-10 items-center px-4 lg:px-0 mt-20 md:mt-8  mb:mt-8 mb-24 md:mb-8 ">
                 <div>
                     <img
                         src={sumit}

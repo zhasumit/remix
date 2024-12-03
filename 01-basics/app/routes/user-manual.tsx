@@ -1,7 +1,13 @@
-import { Link } from '@remix-run/react';
 import React, { useState } from 'react';
 import SmallerTitle from '~/components/smalltitle';
 import Title from '~/components/title';
+import type { MetaFunction } from "@remix-run/node";
+
+export const meta: MetaFunction = () => {
+    return [
+        { title: "Sumit Jha - User manual" },
+    ];
+};
 
 // Importing JSON data
 import strengthsData from '~/data/strengths.json';
@@ -20,23 +26,12 @@ import sendMessagegif from "~/../public/gificons/send-message.gif"
 import Point from '~/components/point';
 
 // Function to calculate the number of days since a given date
-const calculateDaysSince = (date: Date): number => {
-    const today = new Date();
-    const timeDifference = today.getTime() - date.getTime();
-    const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
-    return daysDifference;
-};
-
 const About: React.FC = () => {
-    const birthDate = new Date('2000-07-24');
-    const daysSinceBirth = calculateDaysSince(birthDate);
-    const [gotoUserManual, setGotoUserManual] = useState(false);
     const [isHoveredEmail, setIsHoveredEmail] = useState(false);
     const [isHoveredInstagram, setIsHoveredInstagram] = useState(false);
 
-
     return (
-        <div className="mt-20 font-light text-gray-200 tracking-tight leading-relaxed text-lg mb-28 p-4 lg:p-0">
+        <div className="mt-8 mb-20 lg:mb-24 font-light text-gray-200 tracking-tight leading-relaxed text-lg p-4 lg:p-0">
             <Title first="User" second="Manual" />
 
             <div className='flex items-center gap-2'>

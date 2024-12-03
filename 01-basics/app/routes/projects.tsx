@@ -1,7 +1,14 @@
+import Title from '../components/title';
 import React, { useState } from 'react';
 import projects from '../data/projects.json';
 import petprojects from '../data/petprojects.json';
-import Title from '../components/title';
+import type { MetaFunction } from "@remix-run/node";
+
+export const meta: MetaFunction = () => {
+    return [
+        { title: "Sumit Jha - projects" },
+    ];
+};
 
 interface TechStack {
     name: string;
@@ -34,7 +41,7 @@ const Projects: React.FC = () => {
     ];
 
     return (
-        <div className="mt-20 mb-28 px-4 lg:px-0">
+        <div className="mt-12 md:mt-8 mb-24 md:mb-28 px-4 lg:px-0">
             {combinedProjects.map((section, sectionIndex) => (
                 <div key={sectionIndex}>
                     <Title first={section.category.split(' ')[0]} second={section.category.split(' ')[1]} />
